@@ -1,0 +1,16 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+          <h2>Add Your To Do</h2>
+          <p>To get started, edit <code>src/App.js</code> and save to reload.</p>
+      </div>
+    );
+  }
+}
+
+export default App;
