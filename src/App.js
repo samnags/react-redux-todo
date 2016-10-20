@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import AddTodo from './containers/add_todo'
 
 class App extends Component {
   render() {
     return (
       <div>
-          <h2>Add Your To Do</h2>
-          <p>To get started, edit <code>src/App.js</code> and save to reload.</p>
+          <AddTodo />
       </div>
     );
   }

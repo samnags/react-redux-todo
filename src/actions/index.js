@@ -1,10 +1,13 @@
+let nextTodoId = 0
+
 export const ADD_TODO = 'ADD_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
 export const VisibilityFilters = {
-  SHOW_ALL = 'SHOW_ALL',
-  SHOW_COMPLETED = 'SHOW_COMPLETED',
-  SHOW_ACTIVE = 'SHOW_ACTIVE'
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE'
 
 }
 
@@ -13,11 +16,12 @@ export const VisibilityFilters = {
 export function addTodo(text) {
   return {
     type: ADD_TODO,
+    id: nextTodoId++,
     todo: text
   }
 }
 
-export function remoteTodo(index) {
+export function removeTodo(index) {
   return {
     type: REMOVE_TODO,
     index: index
@@ -25,6 +29,8 @@ export function remoteTodo(index) {
 }
 
 export function toggleTodo(filter) {
-  type: SET_VISIBILITY_FILTER,
-  filter: filter
+  return {
+    type: SET_VISIBILITY_FILTER,
+    filter: filter
+  }
 }
