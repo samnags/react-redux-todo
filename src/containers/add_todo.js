@@ -9,7 +9,7 @@ class AddTodo extends Component {
 
     this.state = { term: '' }
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -19,23 +19,22 @@ class AddTodo extends Component {
     })
   }
 
-  handleSubmit(ev) {
-    ev.preventDefault()
-    debugger
+  handleTodoSubmit() {    
+    this.props.addTodo(this.state.term)
   }
 
   render() {
     return(
       <div>
         <input placeholder="Add your to do" onChange={this.handleChange} value={this.state.term} ></input>
-        <input type="submit" onClick={this.handleSubmit}></input>
+        <input type="submit" onClick={this.handleTodoSubmit}></input>
       </div>
     )
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addTodo })
+  return bindActionCreators({ addTodo }, dispatch)
 }
 
-export default connect(mapDispatchToProps)(AddTodo)
+export default connect(null, mapDispatchToProps)(AddTodo);
