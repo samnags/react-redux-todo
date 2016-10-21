@@ -5,7 +5,7 @@ import { VisibilityFilters, ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../action
 //   todos: []
 // }
 
-export function todos (state = [], action) {
+export function todos (state = [], action) {  
   switch (action.type) {
     case ADD_TODO:
       return [

@@ -19,8 +19,11 @@ class AddTodo extends Component {
     })
   }
 
-  handleTodoSubmit() {    
+  handleTodoSubmit() {
     this.props.addTodo(this.state.term)
+    this.setState({
+      term: ''
+    })
   }
 
   render() {
