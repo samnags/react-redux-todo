@@ -7,7 +7,7 @@ import { toggleTodo } from '../actions'
 
 class TodoList extends Component {
   changeStatus(todo) {
-    this.toggleTodo(todo)
+    this.props.toggleTodo(todo)
   }
 
   render() {
@@ -15,9 +15,8 @@ class TodoList extends Component {
       <div>
         <ul>
         {this.props.todos.map((todo) =>
-          <Todo
+          <Todo todo={todo}
             key={todo.id}
-            text={todo.text}
             onClick={() => this.changeStatus(todo.id)} />
         )}
         </ul>

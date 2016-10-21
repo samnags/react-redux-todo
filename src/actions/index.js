@@ -13,11 +13,12 @@ export const VisibilityFilters = {
 }
 
 // Action creators
-export function addTodo(text) {
+export const addTodo = (text) => {
   return {
     type: ADD_TODO,
     id: nextTodoId++,
-    text: text
+    text: text,
+    // completed: false
   }
 }
 
@@ -28,7 +29,7 @@ export function addTodo(text) {
 //   }
 // }
 
-export function toggleTodo(id) {
+export const toggleTodo = (id) => {
   return {
     type: TOGGLE_TODO,
     id: id

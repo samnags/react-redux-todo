@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 export const Todo = (props) => {
   return (
-    <li
-      key={props.id}
+    <li      
       onClick={props.onClick}
+      style={{textDecoration: props.todo.completed ? 'line-through' : 'none'}}
       >
-        {props.text}
+        {props.todo.text}
     </li>
   )
 }
