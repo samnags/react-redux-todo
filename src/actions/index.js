@@ -11,7 +11,6 @@ export const VisibilityFilters = {
 
 }
 
-
 // Action creators
 export function addTodo(text) {
   return {

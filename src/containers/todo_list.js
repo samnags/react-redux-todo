@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Todo } from '../components/todo'
 
 class TodoList extends Component {
 
@@ -20,14 +21,12 @@ class TodoList extends Component {
   render() {    
     return (
       <div>
+        <ul>
         {this.props.todos.map((todo) =>
-          <li key={todo.id}>
-            {todo.text}
-          </li>
-
+          <Todo key={todo.id} text={todo.text} />
         )}
+        </ul>
       </div>
-
     )
   }
 }
