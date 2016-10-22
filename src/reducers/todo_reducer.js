@@ -13,7 +13,7 @@ export function todos (state = [], action) {
       ];
     case TOGGLE_TODO:
       return state.map((todo, index) => {
-        if (index === action.id) {          
+        if (index === action.id) {
           return Object.assign({}, todo, {
           completed: !state.completed})
         }
@@ -25,14 +25,11 @@ export function todos (state = [], action) {
   }
 }
 
-// function todoApp(state = initialState, action) {
-//   return Object.assign({}, state, {
-//         visibilityFilter: action.filter
-//       })
-// }
-
-
-// return [...state, Object.assign({}, state, {
-//   completed: !state.completed
-// })
-// ]
+export const visibilityFilter = (state = 'SHOW_ALL', action) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter
+    default:
+      return state
+  }
+}

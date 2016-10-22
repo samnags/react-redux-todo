@@ -28,9 +28,11 @@ class AddTodo extends Component {
 
   render() {
     return(
-      <div>
-        <input placeholder="Add your to do" onChange={this.handleChange} value={this.state.term} ></input>
-        <input type="submit" onClick={this.handleTodoSubmit}></input>
+      <div className='row'>
+        <div className='col-md-3'>
+          <input placeholder="Add your to do" onChange={this.handleChange} value={this.state.term} ></input>
+          <input type="submit" onClick={this.handleTodoSubmit}></input>
+        </div>
       </div>
     )
   }

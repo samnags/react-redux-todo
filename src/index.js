@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import { createStore } from 'redux'
-import { todos } from './reducers/todo_reducer'
 import { Provider } from 'react-redux'
+import { todosReducer } from './reducers/todo_reducer'
 
-let store = createStore(todos);
+let store = createStore(todosReducer);
 
 
 ReactDOM.render(
