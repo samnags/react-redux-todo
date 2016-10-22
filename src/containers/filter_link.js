@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 class FilterLink extends Component {
 
   render() {
-    debugger
     return (
-      <div>Hello</div>
+      <div>
+        <a href='#'></a>
+      </div>
     )
   }
 }
 
 
 function mapStateToProps(state) {
-  debugger
   return { filter: state };
 }
 
