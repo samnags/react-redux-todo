@@ -14,7 +14,7 @@ class FilterLink extends Component {
     this.props.setVisibilityFilter(filter)
   }
 
-  render() {    
+  render() {
     return (
       <div className='row'>
       <button

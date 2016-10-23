@@ -14,7 +14,6 @@ export function todos (state = [], action) {
         }
           return todo
       })
-
     default:
       return state
   }
