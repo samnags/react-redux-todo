@@ -1,4 +1,4 @@
-import VisibilityFilters from '../actions/index'
+// import VisibilityFilters from '../actions/index'
 
 export function visibilityFilter (state = 'SHOW_ALL', action) {
   switch (action.type) {

@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setVisibilityFilter } from '../actions';
 
 class FilterLink extends Component {
+  constructor(props) {
+    super();
+
+    // this.setFilter = this.setFilter.bind(this)
+  }
+
+  setFilter(filter) {
+    console.log(filter)
+    this.props.setVisibilityFilter(filter)
+  }
 
   render() {
+    debugger
     return (
-      <div>
-        <a href='#'></a>
+      <div className='row'>
+      <button
+        className='btn btn-default'
+        onClick={() => this.setFilter(this.props.todoFilter)} >
+        {this.props.name}
+      </button>
       </div>
     )
   }
@@ -14,7 +31,11 @@ class FilterLink extends Component {
 
 
 function mapStateToProps(state) {
-  return { filter: state };
+  return { todoFilter: state.visibilityFilter };
 }
 
-export default connect(mapStateToProps)(FilterLink);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ setVisibilityFilter}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilterLink);

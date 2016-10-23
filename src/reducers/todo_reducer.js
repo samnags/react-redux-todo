@@ -1,9 +1,4 @@
-import { VisibilityFilters, ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions/index'
-
-// const initialState = {
-//   visibilityFilter: VisibilityFilters.SHOW_ALL,
-//   todos: []
-// }
+import { ADD_TODO, TOGGLE_TODO } from '../actions/index'
 
 export function todos (state = [], action) {
   switch (action.type) {
@@ -20,15 +15,6 @@ export function todos (state = [], action) {
           return todo
       })
 
-    default:
-      return state
-  }
-}
-
-export function visibilityFilter (state = 'SHOW_ALL', action) {
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter
     default:
       return state
   }
