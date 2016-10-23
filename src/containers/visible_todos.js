@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import TodoList from '../components/todo_list'
@@ -22,7 +22,7 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {  
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({ toggleTodo }, dispatch)
 }
 
