@@ -16,14 +16,12 @@ class FilterLink extends Component {
 
   render() {
     return (
-      <div className='row'>
       <button
         className={this.props.active ? 'btn btn-default active' : 'btn btn-default' }
         onClick={() => this.setFilter(this.props.todofilter)}
         >
         {this.props.children}
       </button>
-      </div>
     )
   }
 }

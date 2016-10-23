@@ -6,18 +6,16 @@ import FilterLink  from '../containers/filter_link'
 
 export const Footer = () => {
   return (
-    <div className='row'>
-      <div className='col-md-12'>
-        <FilterLink todofilter='SHOW_ALL'>
+    <div>
+        <FilterLink className="col-md-4" todofilter='SHOW_ALL'>
           All
         </FilterLink>
-        <FilterLink todofilter='SHOW_COMPLETED'>
+        <FilterLink className="col-md-4" todofilter='SHOW_COMPLETED'>
           Completed
         </FilterLink>
-        <FilterLink todofilter='SHOW_ACTIVE'>
+        <FilterLink className="col-md-4" todofilter='SHOW_ACTIVE'>
           Active
         </FilterLink>
-      </div>
     </div>
   )
 }
