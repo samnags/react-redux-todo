@@ -7,7 +7,6 @@ class FilterLink extends Component {
   constructor(props) {
     super();
 
-    // this.setFilter = this.setFilter.bind(this)
   }
 
   setFilter(filter) {
@@ -15,23 +14,24 @@ class FilterLink extends Component {
     this.props.setVisibilityFilter(filter)
   }
 
-  render() {
-    debugger
+  render() {    
     return (
       <div className='row'>
       <button
-        className='btn btn-default'
-        onClick={() => this.setFilter(this.props.todoFilter)} >
-        {this.props.name}
+        className={this.props.active ? 'btn btn-default active' : 'btn btn-default' }
+        onClick={() => this.setFilter(this.props.todofilter)}
+        >
+        {this.props.children}
       </button>
       </div>
     )
   }
 }
 
-
-function mapStateToProps(state) {
-  return { todoFilter: state.visibilityFilter };
+function mapStateToProps(state, ownProps) {
+  return {
+    active: ownProps.todofilter === state.visibilityFilter ? true : false
+  }
 }
 
 function mapDispatchToProps(dispatch) {
