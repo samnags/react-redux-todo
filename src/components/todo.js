@@ -10,3 +10,6 @@ export const Todo = (props) => {
     </li>
   )
 }
+
+
+// onClick={this.handleClick(idx)}
